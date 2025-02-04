@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: RSC-INFO
+  config:
+    import: http://localhost:8083/
+eureka:
+  instance:
+    prefer-ip-address: true
+    hostname: RSC-INFO
+
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8080/eureka/
+server:
+  port: 8081
+
+
+
