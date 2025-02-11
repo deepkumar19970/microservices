@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.lang.reflect.Array;
 
 @RestController
+@RequestMapping("/rsc-address")
 public class AddressController {
 
     @Autowired
