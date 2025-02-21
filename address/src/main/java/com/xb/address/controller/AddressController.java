@@ -18,7 +18,8 @@ public class AddressController {
     AddressRepo addressRepo;
 
     @RequestMapping(value = "/getAddressById", method = RequestMethod.GET)
-    public ResponseEntity<Address> getAddress(@RequestParam(name = "addressId") Long addressId) {
+    public ResponseEntity<Address> getAddress(@RequestParam(name = "addressId") Long addressId  , @RequestHeader(value = "Authorization" ) String authorization  ) {
+        System.out.println(authorization);
         return new ResponseEntity<>(this.addressRepo.findById(addressId).get(), HttpStatus.OK);
     }
 
