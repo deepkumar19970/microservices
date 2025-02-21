@@ -9,18 +9,18 @@ import org.springframework.security.core.context.ReactiveSecurityContextHolder;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
 
-@Component
-public class AuthorizationHeaderGatewayFilterFactory extends AbstractGatewayFilterFactory<AuthorizationHeaderGatewayFilterFactory.Config> {
+//@Component
+public class AuthorizationHeaderGatewayFilterFactory /*extends AbstractGatewayFilterFactory<AuthorizationHeaderGatewayFilterFactory.Config> */{
 
-    public AuthorizationHeaderGatewayFilterFactory() {
+ /*   public AuthorizationHeaderGatewayFilterFactory() {
         super(Config.class);
     }
 
     @Override
     public GatewayFilter apply(Config config) {
         return (exchange, chain) -> {
-           // Authentication autentication = ReactiveSecurityContextHolder.getContext().map(e->e.getAuthentication()).;
-            //System.out.println(token);
+            Authentication autentication = ReactiveSecurityContextHolder.getContext().map(e->e.getAuthentication());
+            System.out.println(token);
             ServerHttpRequest request = exchange.getRequest()
                     .mutate()
                     .header(HttpHeaders.AUTHORIZATION, "Bearer " + token) // Inject Authorization token
@@ -40,5 +40,5 @@ public class AuthorizationHeaderGatewayFilterFactory extends AbstractGatewayFilt
         public void setToken(String token) {
             this.token = token;
         }
-    }
+    }*/
 }

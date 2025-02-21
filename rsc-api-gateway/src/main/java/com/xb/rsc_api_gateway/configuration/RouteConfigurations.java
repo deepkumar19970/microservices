@@ -12,10 +12,10 @@ public class RouteConfigurations {
     @Bean
     public RouteLocator myRoutes(RouteLocatorBuilder builder ,AuthorizationHeaderGatewayFilterFactory authFilter ) {
         return builder.routes().route("RSC-INFO", e -> e.path("/rsc-info/*"
-                ).filters(f -> f.filter(authFilter.apply(new AuthorizationHeaderGatewayFilterFactory.Config())))
+                )/*.filters(f -> f.filter(authFilter.apply(new AuthorizationHeaderGatewayFilterFactory.Config())))*/
                         .uri("http://localhost:8081"))
                 .route("RSC-ADDRESS", e -> e.path("/rsc-address/*"
-                ).filters(f -> f.filter(authFilter.apply(new AuthorizationHeaderGatewayFilterFactory.Config())))
+                )/*.filters(f -> f.filter(authFilter.apply(new AuthorizationHeaderGatewayFilterFactory.Config())))*/
                 .uri("http://localhost:8082"))
                 .build();
     }
